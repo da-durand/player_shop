@@ -5,42 +5,6 @@ var GET_PARAM = function(name) {
 
 
 $(document).ready(function () {
-console.log("plop");
-
-    var page = GET_PARAM("page");
-
-
-    var nbpage = Math.ceil(catalog.length / 12);
-
-    console.log(nbpage);
-
-    if (page > 1){
-        $(".previous-page").attr("href", "./catalog.html?page=" + (page-1))
-    }
-
-    $(".next-page").attr("href", "./catalog.html?page=" + (page+1))
-    
-    for (let i = 0; i < nbpage ; i ++){
-        
-        $(".nav-buttons").append('<li class="page-item"><a class="page-link" href="./catalog.html?page=' + (i+1) + '">'+ (i+1) + '</a></li>')
-        
-        
-    }
-
-    // Integration produit catalogue
-    var start = 0
-    var end = 12
-    if(page != null && page != 1) {
-        start = 12 * (parseInt(page) - 1)
-        end = start + 12
-        
-    }
-    console.log(start, end);
-    
-    var subcatalog = catalog.slice(start, end)
-    console.log(subcatalog);
-    
-
 
     for (let i = 0; i < subcatalog.length; i++) {
 
